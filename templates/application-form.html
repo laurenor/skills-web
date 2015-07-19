@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>Application Form</title>
+  <link href="static/css/styles.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<form>
+		<h1>Application Form</h1>
+		<label> First name: 
+			<input type="text" name="firstname"> 
+		</label>
+		<br>
+		<labeL>Last name: 
+			<input type="text" name="lastname">
+		</labeL>
+		<br>
+		<label>Salary requirement: 
+			<input type="text" name="salary">
+		</label>
+		<br>
+		<label>
+		Job applying for: 
+			<select name="job">
+				<option value="software engineer">Software Engineer</option>
+				<option value="qa engineer">QA Engineer</option>
+				<option value="product manager">Product Manager</option>
+			</select>	
+		</label>	
+		<br>
+		<form action="/application">
+			<input type="submit">
+		</form>
+	</form>
+
+</body>
+</html>
