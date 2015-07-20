@@ -60,6 +60,9 @@
       display: inline-block;
       margin-right: 1em;
     }
+    h4 {
+      color: red;
+    }
   </style>
 
 </head>
@@ -144,6 +147,7 @@ buttons.addEventListener('click', alertButton);
 
 
 <h3>Preventing Form Submission</h3>
+<h4>LO: Still working on this! Trying to prevent enter from linking to other page</h4>
 <p>
   Normally, for this form, it submits to <code>some-script</code>. Make it pop up an
   alert box instead.
@@ -158,7 +162,7 @@ buttons.addEventListener('click', alertButton);
 
 <script>
   var alert_button = document.getElementById('prevent-form-submission-button');
-  var alert_button2 = document.getElementById('favorite-color');
+  var alert_button2 = document.getElementById('prevent-form-submission-form');
 
   function alertClick(evt) {
     alert("Alert instead");
@@ -166,7 +170,7 @@ buttons.addEventListener('click', alertButton);
   };
 
   alert_button.addEventListener('click', alertClick);
-  alert_button.addEventListener('onsubmit', alertClick);
+  alert_button2.addEventListener('onsubmit', alertClick);
 </script>
 
 <div class="hint">
@@ -432,6 +436,7 @@ buttons.addEventListener('click', alertButton);
 
 
 <h3>Less Annoying Number-Guessing Game</h3>
+<h4>LO: I am still working on this!</h4>
 <p>
   That was fun! But, wow, all those alerts and prompts are annoying, aren't they?
 </p>
