@@ -538,22 +538,51 @@ buttons.addEventListener('click', alertButton);
   function changeColor() {
     // $('.prime-box').attr('style', 'background-color: red');
     $('.prime-box').each(function(i) {
-    $(this).attr('style', 'background-color: PRIME_COLORS[0]');
+    $(this).attr('style', 'background-color: red');
     });
   };
 
-  var prime_list = [];
-  function calculatePrimes() {
-    for (var i = 1; i <= 100; i++) {
-      if ( 
+// find primes
 
-    }
-
+  primes = [];
+  for (var i=2; i <= 100; i++) {
+      if (((i % 2 !== 0) && (i !== 2)) && ((i % 3 !== 0) && (i !== 3))) {
+          primes.push(i);
+      }
+      else if ((i === 2) || (i ===3)) {
+          primes.push(i);
+      }
   }
+  
+  console.log(primes);
 
+  // var inside_prime_box = $('.prime-box').html();
+  // console.log(inside_prime_box);
+  // function nextPrime() {
+  //   for (var i = 0; i < primes.length; i++) {
+  //     if (inside_prime_box == primes[i]) {
+  //       $('.prime-box').html(primes[i+1]);
+  //     }
+  //   } 
 
+  // };
 
-  $('#make-prime-boxes').on('click', calculatePrimes);
+  // using .each()
+  function nextPrime() {
+    $('.prime-box').each(
+      function(){
+        var inside_prime_box = $(this).html();
+        console.log(inside_prime_box);
+        for (var i = 0; i < primes.length; i++) {
+          if (inside_prime_box == primes[i]) {
+            $(this).html(primes[i+1]);
+          }
+      }
+
+    })
+  };
+  // $('#make-prime-boxes').on('click', changeColor);
+  $('#make-prime-boxes').on('click', nextPrime);
 </script>
 
 
