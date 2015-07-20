@@ -530,16 +530,28 @@ buttons.addEventListener('click', alertButton);
 <script>
   var PRIME_COLORS = ['orange', 'midnightblue', 'darkgoldenrod', 'green', 'purple'];
 
-  // $('.prime-box').each(function(i) {
-  //  this.style = PRIME_COLORS[i];
-
-  // });
-
+  // need to figure out how to assign colors by index. 'background-color: PRIME_COLORS[#]' doesn't work
   function changeColor() {
     // $('.prime-box').attr('style', 'background-color: red');
-    $('.prime-box').each(function(i) {
-    $(this).attr('style', 'background-color: red');
-    });
+    $('.prime-box').each(
+      function() {
+          if ($(this).attr('style') === 'background-color: orange') {
+            $(this).attr('style', 'background-color: midnightblue');
+          }
+          else if ($(this).attr('style') === 'background-color: midnightblue') {
+            $(this).attr('style', 'background-color: darkgoldenrod');
+          }
+          else if ($(this).attr('style') === 'background-color: darkgoldenrod') {
+            $(this).attr('style', 'background-color: green');
+          }
+          else if ($(this).attr('style') === 'background-color: green') {
+            $(this).attr('style', 'background-color: purple');
+          } 
+          else if ($(this).attr('style') === 'background-color: purple') {
+            $(this).attr('style', 'background-color: orange');
+          }     
+        
+      });
   };
 
 // find primes
@@ -554,25 +566,12 @@ buttons.addEventListener('click', alertButton);
       }
   }
   
-  console.log(primes);
-
-  // var inside_prime_box = $('.prime-box').html();
-  // console.log(inside_prime_box);
-  // function nextPrime() {
-  //   for (var i = 0; i < primes.length; i++) {
-  //     if (inside_prime_box == primes[i]) {
-  //       $('.prime-box').html(primes[i+1]);
-  //     }
-  //   } 
-
-  // };
-
-  // using .each()
+  // need to figure out how to make this work with an infinite number of primes
   function nextPrime() {
     $('.prime-box').each(
       function(){
         var inside_prime_box = $(this).html();
-        console.log(inside_prime_box);
+        // console.log(inside_prime_box);
         for (var i = 0; i < primes.length; i++) {
           if (inside_prime_box == primes[i]) {
             $(this).html(primes[i+1]);
@@ -581,7 +580,7 @@ buttons.addEventListener('click', alertButton);
 
     })
   };
-  // $('#make-prime-boxes').on('click', changeColor);
+  $('#make-prime-boxes').on('click', changeColor);
   $('#make-prime-boxes').on('click', nextPrime);
 </script>
 
