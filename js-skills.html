@@ -61,6 +61,7 @@
       margin-right: 1em;
     }
   </style>
+
 </head>
 <body>
 
@@ -121,10 +122,13 @@ buttons.addEventListener('click', alertButton);
 </fieldset>
 
 <script>
-  // var hello = document.getElementById('change-hello-to-goodbye-button')
+  var button = document.getElementById('change-hello-to-goodbye-button');
+  function sayGoodbye(){
+    document.getElementById('message-to-change').innerHTML = 'Goodbye';
+  }
 
-  
-  // }
+  button.addEventListener('click', sayGoodbye);
+
 </script>
 
 <div class="hint">
@@ -162,7 +166,7 @@ buttons.addEventListener('click', alertButton);
   };
 
   alert_button.addEventListener('click', alertClick);
-  alert_button2.addEventListener('onkeypress', alertClick);
+  alert_button.addEventListener('onsubmit', alertClick);
 </script>
 
 <div class="hint">
@@ -196,7 +200,7 @@ buttons.addEventListener('click', alertButton);
 
  var button = document.getElementById('reverse-string-button');
 
- function reverseString() {
+ function reverseString(evt) {
    var msg = "Porcupines are cute";
 
    // do some stuff here to reverse that string into a new variable
@@ -232,7 +236,7 @@ buttons.addEventListener('click', alertButton);
 
 <script>
 
-  function alertHello() {
+  function alertHello(evt) {
     alert('hello');
   }
 
@@ -263,10 +267,10 @@ buttons.addEventListener('click', alertButton);
 </fieldset>
 
 <script>
-  function cmereDoggie() {
-    $('img').attr('src', 'http://i.kinja-img.com/gawker-media/image/upload/kwzlpzbtii6czvn3gysi.jpg');
+  function cmereDoggie(evt) {
+    $('#kittenz-rule').attr('src', 'http://i.kinja-img.com/gawker-media/image/upload/kwzlpzbtii6czvn3gysi.jpg');
   }
-  $('img').on('dblclick', cmereDoggie);
+  $('#kittenz-rule').on('dblclick', cmereDoggie);
 </script>
 
 <div class="hint">
@@ -299,7 +303,14 @@ buttons.addEventListener('click', alertButton);
 </fieldset>
 
 <script>
-  // put your code here
+
+  function cmerePorcupine() {
+    $('#cute-porcupine-image').fadeIn(2000);
+  };
+
+  $('#make-a-porcupine').on('click', cmerePorcupine);
+
+
 </script>
 
 <div class="hint">
@@ -331,7 +342,15 @@ buttons.addEventListener('click', alertButton);
 </fieldset>
 
 <script>
-  // put your code here
+
+  function favFood(evt) {
+    var food = $('#favorite-food-input').val();
+    $('#agreeable-text').html('I like ' + food + ', too.');
+    evt.preventDefault();
+  };
+
+  $('#agreeable-form').on('submit', favFood);
+
 </script>
 
 <div class="hint">
