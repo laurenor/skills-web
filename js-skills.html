@@ -396,7 +396,27 @@ buttons.addEventListener('click', alertButton);
 </fieldset>
 
 <script>
-  // put your code here
+
+  function guessNumber() {
+    var number_to_guess = Math.floor(Math.random() * 100);
+    var input = prompt("Guess a number between 1 and 100!");
+    input = parseInt(input);
+
+
+    while (input !== number_to_guess) {
+      if (input > number_to_guess) {
+        input = prompt("Too high! Guess again!");
+        input = parseInt(input);
+        }
+      else if (input < number_to_guess) {
+        input = prompt("Too low! Guess again!");
+        input = parseInt(input);
+        }
+      }
+    alert("Congratulations! " + input + " is the correct number!");
+    };
+
+  $('#play-guessing-game').on('click', guessNumber);
 </script>
 
 <div class="hint">
@@ -429,14 +449,51 @@ buttons.addEventListener('click', alertButton);
   <input type="button" id="play-guessing-game-2" value="Play!">
   <form action="do-not-go-here" id="guessing-game-2-form">
     <input id="number-guessed" name="number-guessed" type="number" placeholder="Guess" disabled>
-    <!-- hey! go read MDN about the "number" input type. Cool, huh? -->
     <input type="submit" id="try-this-number" value="Guess" disabled>
     <div id="number-guessing-msg"></div>
   </form>
 </fieldset>
 
+
 <script>
-  // put your code here
+// needs work. When "Guess" is clicked, screen freezes.
+  function removeDisable(evt) {
+    $("#number-guessed").prop("disabled", false);
+    $("#try-this-number").prop("disabled", false);
+
+  };
+
+  function guessNumber2(evt) {
+    var number_to_guess = Math.floor(Math.random() * 100);
+    var input = $('#number-guessed').val();
+    input = parseInt(input);
+
+    // Check what comp's number and user input is:
+    $('#number-guessing-msg').html("Comp's number: " + number_to_guess + "; Your guess: " + input);
+    
+    while (number_to_guess !== input) {
+      if (input < number_to_guess) {
+        var input = $('#number-guessed').val();
+        input = parseInt(input);
+        $('#number-guessing-msg').html('Too high! Guess again!')
+      }
+      else if (input > number_to_guess) {
+        var input = $('#number-guessed').val();
+        input = parseInt(input);
+        $('#number-guessing-msg').html('Too high! Guess again!');
+      }
+    };
+
+    $('#number-guessing-msg').html('Correct! ' + input + " is the correct number!");
+
+    evt.preventDefault();
+
+  };
+
+  // enables inputs
+  $('#play-guessing-game-2').on('click', removeDisable);
+  $('#guessing-game-2-form').on('submit', guessNumber2);
+
 </script>
 
 
@@ -471,9 +528,32 @@ buttons.addEventListener('click', alertButton);
 </fieldset>
 
 <script>
-    var PRIME_COLORS = ['orange', 'midnightblue', 'darkgoldenrod', 'green', 'purple'];
+  var PRIME_COLORS = ['orange', 'midnightblue', 'darkgoldenrod', 'green', 'purple'];
 
-  // put the rest of your code here
+  // $('.prime-box').each(function(i) {
+  //  this.style = PRIME_COLORS[i];
+
+  // });
+
+  function changeColor() {
+    // $('.prime-box').attr('style', 'background-color: red');
+    $('.prime-box').each(function(i) {
+    $(this).attr('style', 'background-color: PRIME_COLORS[0]');
+    });
+  };
+
+  var prime_list = [];
+  function calculatePrimes() {
+    for (var i = 1; i <= 100; i++) {
+      if ( 
+
+    }
+
+  }
+
+
+
+  $('#make-prime-boxes').on('click', calculatePrimes);
 </script>
 
 

@@ -2,37 +2,35 @@
 <html>
 <head>
   <title>Application Form</title>
-  <link href="static/css/styles.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet'>
+  <link href="../static/css/styles.css" rel="stylesheet">
+
 </head>
 <body>
-	<form>
-		<h1>Application Form</h1>
+	<form action="/application" method="POST">
+		<h1><img src="http://www.clker.com/cliparts/f/d/f/8/13328073611270085702Watermelon.svg.med.png" height="22px" alt="I'm an ubermelon">  Application Form  <img src="http://www.clker.com/cliparts/f/d/f/8/13328073611270085702Watermelon.svg.med.png" height="22px" alt="I'm an ubermelon"></h1>
 		<label> First name: 
-			<input type="text" name="firstname"> 
+			<input type="text" name="firstname" required> 
 		</label>
-		<br>
+		<br><br>
 		<labeL>Last name: 
-			<input type="text" name="lastname">
+			<input type="text" name="lastname" required>
 		</labeL>
-		<br>
+		<br><br>
 		<label>Salary requirement: 
-			<input type="text" name="salary">
+			<input type="text" name="salary" required>
 		</label>
-		<br>
+		<br><br>
 		<label>
 		Job applying for: 
-			<select name="job">
+			<select name="job" id="job_choice" required>
 				<option value="software engineer">Software Engineer</option>
 				<option value="qa engineer">QA Engineer</option>
 				<option value="product manager">Product Manager</option>
 			</select>	
 		</label>	
-		<br>
-		<form action="/application">
-			<input type="submit">
-		</form>
+		<br><br>
+		<input type="submit">
 	</form>
-
 </body>
 </html>
