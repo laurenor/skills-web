@@ -30,3 +30,8 @@ a:visited {
 a:hover {
 	color: #59D659;
 }
+
+#boldlast {
+	font-weight: bold;
+	color: #59D659;
+}
