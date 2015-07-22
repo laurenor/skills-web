@@ -3,13 +3,19 @@
 <head>
   <title>Thanks for applying.</title>
   <link href="../static/css/styles.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet'>
 </head>
 <body>
-
-<h1>Ubermelon thanks you!</h1>
-<p> Thank you {{ firstname }} <span id="boldlast">{{ lastname }}</span></b> for applying to be a {{ job }}. Your minimum salary requirement is {{ salary }} dollars.</p>
-<br>
-<img src="http://www.clker.com/cliparts/f/d/f/8/13328073611270085702Watermelon.svg.med.png" height="200px" alt="I'm an ubermelon">
+	<nav>
+		<ul>
+			<li id="left"><a href="/">Ubermelon Careers</a></li>
+			<li id="right"><a href="/application-form"</a>Apply Now</a></li>
+		</ul>
+	</nav>
+	<h1>Ubermelon thanks you!</h1>
+	<p> Thank you {{ firstname }} <span id="boldlast">{{ lastname }}</span></b> for applying to be a {{ job }}. Your minimum salary requirement is {{ salary }} dollars.</p>
+	<br>
+	<img src="../static/img/uber.png" height="200px" alt="I'm an ubermelon">
 
 
 

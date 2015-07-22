@@ -2,28 +2,34 @@
 <html>
 <head>
   <title>Application Form</title>
-  <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet'>
   <link href="../static/css/styles.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet'>
 
 </head>
 <body>
-	<h1><img src="http://www.clker.com/cliparts/f/d/f/8/13328073611270085702Watermelon.svg.med.png" height="22px" alt="I'm an ubermelon">  Application Form  <img src="http://www.clker.com/cliparts/f/d/f/8/13328073611270085702Watermelon.svg.med.png" height="22px" alt="I'm an ubermelon"></h1>
+	<nav>
+		<ul>
+			<li id="left"><a href="/">Ubermelon Careers</a></li>
+			<li id="right"><a href="/application-form"</a>Apply Now</a></li>
+		</ul>
+	</nav>
+	<h1>Application Form</h1>
 	<p>Fill out the form to apply to one of Ubermelon's open positions.</p>
 	<form action="/application" method="POST">
-		<label> First name: 
+		<label> First name: &nbsp;
 			<input type="text" name="firstname" required> 
 		</label>
 		<br><br>
-		<labeL>Last name: 
+		<labeL>Last name: &nbsp;
 			<input type="text" name="lastname" required>
 		</labeL>
 		<br><br>
-		<label>Salary requirement: 
+		<label>Salary requirement: &nbsp;
 			<input type="text" name="salary" required>
 		</label>
 		<br><br>
 		<label>
-		Job applying for: 
+		Job applying for: &nbsp;
 			<select name="job" id="job_choice" required>
 				<option value="Software Engineer">Software Engineer</option>
 				<option value="QA Engineer">QA Engineer</option>
